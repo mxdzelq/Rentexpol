@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentexpol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
+</head>
+<body>
+    <div class="pricing-header">
+        <nav>
+            <a href="index.html"><img src="img/logo-no-background.png" alt="logo firmy"></a>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">STRONA GŁÓWNA</a></li>
+                    <li><a href="cars.html">NASZE SAMOCHODY</a></li>
+                    <li><a href="pricing.html">CENNIK</a></li>
+                    <li><a href="contact.html">KONTAKT</a></li>
+                    <li><a href="about.html">O PROJEKCIE</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Cennik</h1>
+    </div>
+    <section class="pricing">
+        <h2>Najniższe ceny na rynku</h2>
+        <p>Oprócz wysokiej jakości usług, oferujemy niskie ceny za wynajem. Kilka zdań o niskich cenach i warunkach zapłaty. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula, justo ac vestibulum euismod, tortor velit faucibus ipsum, sed semper est ipsum id odio. Nullam sit amet velit et augue facilisis luctus pretium congue tellus.</p>
+        <div class="pricing-column">
+            <ul class="price">
+                <li class="price-header">Klasa A</li>
+                <li class="price-subheader">Od 2000zł/dzień!</li>
+                <li>1-4dni 3500zł/dzień</li>
+                <li>5-10dni 3200zł/dzień</li>
+                <li>6-30dni 2800zł/dzień</li>
+                <li>+30dni 2000zł/dzień</li>
+                <li class="price-button"><a href="contact.html" class="button">Zarezerwuj teraz</a></li>
+            </ul>
+        </div>
+        <div class="pricing-column">
+            <ul class="price">
+                <li class="price-header">Klasa B</li>
+                <li class="price-subheader">Od 1500zł/dzień!</li>
+                <li>1-4dni 2700zł/dzień</li>
+                <li>5-10dni 2200zł/dzień</li>
+                <li>6-30dni 2000zł/dzień</li>
+                <li>+30dni 1500zł/dzień</li>
+                <li class="price-button"><a href="contact.html" class="button">Zarezerwuj teraz</a></li>
+            </ul>
+        </div>
+        <div class="pricing-column">
+            <ul class="price">
+                <li class="price-header">Klasa C</li>
+                <li class="price-subheader">Od 1000zł/dzień!</li>
+                <li>1-4dni 2000zł/dzień</li>
+                <li>5-10dni 1500zł/dzień</li>
+                <li>6-30dni 1300zł/dzień</li>
+                <li>+30dni 1000zł/dzień</li>
+                <li class="price-button"><a href="contact.html" class="button">Zarezerwuj teraz</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="footer">
+        <button onclick="dcrSize()">A-</button>
+        <button onclick="incrSize()">A+</button><br>
+        <br><h4>O nas</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula, justo ac vestibulum euismod, tortor velit faucibus ipsum, sed semper est ipsum id odio. Nullam sit amet velit et augue facilisis luctus pretium congue tellus. In arcu urna, imperdiet tempus iaculis vel, tristique eu lectus. Aliquam vel posuere purus. Nulla vitae ex eget purus rutrum egestas.</p><br>
+        <p>Zaoberwuj nas</p>
+        <a href =""><i class="fa-brands fa-square-facebook" aria-hidden="true"></i></a> <a href =""><i class="fa-brands fa-square-twitter" aria-hidden="true"></i></a> <a href =""><i class="fa-brands fa-square-instagram" aria-hidden="true"></i></a>
+    </div>
+    <script>
+        var limit = 0;
+        function incrSize(){
+            if (limit<2){
+            var obj_p = document.getElementsByTagName("p");
+                for (let i=0; i<obj_p.length; i++){
+                        var obj_p = document.getElementsByTagName("p")[i];
+                        var p_crr_size = window.getComputedStyle(obj_p).fontSize;
+                        obj_p.style.fontSize=parseInt(p_crr_size)+2+"px";
+                        var obj_p = document.getElementsByTagName("p");
+    
+            }
+                limit++;   
+            }
+        }
+        function dcrSize(){
+            if (limit > -2){
+            var obj_p = document.getElementsByTagName("p");
+                for (let i=0; i<obj_p.length; i++){
+                        var obj_p = document.getElementsByTagName("p")[i];
+                        var p_crr_size = window.getComputedStyle(obj_p).fontSize;
+                        obj_p.style.fontSize=parseInt(p_crr_size)-2+"px";
+                        var obj_p = document.getElementsByTagName("p");
+            }
+                limit--;
+            }
+        }
+    </script>
+    
+</body>
+</html>

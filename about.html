@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentexpol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
+</head>
+<body>
+    <div class="pricing-header">
+        <nav>
+            <a href="index.html"><img src="img/logo-no-background.png" alt="logo firmy"></a>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">STRONA GŁÓWNA</a></li>
+                    <li><a href="cars.html">NASZE SAMOCHODY</a></li>
+                    <li><a href="pricing.html">CENNIK</a></li>
+                    <li><a href="contact.html">KONTAKT</a></li>
+                    <li><a href="about.html">O PROJEKCIE</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>O projekcie</h1>
+    </div>
+    <div class="about">
+        <p>Projekt zrealizowany został przy użyciu HTML5 + CSS + JavaScript bez użycia dodatkowych technologii/frameworków.<br> Nawigacja jest prostym menu, odwołującym do kolejnych podstron serwisu.</p><br>
+        <p>Przy realizacji podpunktu dostępu dla niepełnosprawnych, sugerowano się wskazówkami zawartymi na stronie: https://wcag20.widzialni.org/ <br> Przykładowe funkcjonalości: <br> - tekst alternatywny przy obrazkach <br> - kontrast między tłem i tekstem <br> - dodatkowe tagi blokujące czytanie ikon dekoracyjnych <br> - możliwość zwiększania/zmniejszania tekstu paragrafów (skrypt js po stronie klienta, realizujący również podpunkt o zastosowaniu dodatkowej technologii) - przyciski A+/A- w stopce strony</p><br>
+        <p>W projekcie zadbano również o responsywność - serwis wygląda dobrze również na urządzeniach mobilnych.</p>
+        <p>Serwis przeszedł walidację HTML - https://validator.w3.org/ oraz CSS - https://jigsaw.w3.org/</p>
+        <p>Przetestowano wsteczną kompatybilność z przeglądarkami takimi jak Lynx, Firefox 51.0 oraz nowszymi wersjami popularnych przeglądarek</p>
+        <p>W projekcie wykorzystano czcionkę Roboto z fonts.googleapis.com oraz ikony fontawesome.com</p>
+    </div>
+        <div class="footer">
+        <button onclick="dcrSize()">A-</button>
+        <button onclick="incrSize()">A+</button><br>
+        <h4>O nas</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula, justo ac vestibulum euismod, tortor velit faucibus ipsum, sed semper est ipsum id odio. Nullam sit amet velit et augue facilisis luctus pretium congue tellus. In arcu urna, imperdiet tempus iaculis vel, tristique eu lectus. Aliquam vel posuere purus. Nulla vitae ex eget purus rutrum egestas.</p><br>
+        <p>Zaoberwuj nas</p>
+        <a href =""><i class="fa-brands fa-square-facebook" aria-hidden="true"></i></a> <a href =""><i class="fa-brands fa-square-twitter" aria-hidden="true"></i></a> <a href =""><i class="fa-brands fa-square-instagram" aria-hidden="true"></i></a>
+    </div>
+    <script>
+        var limit = 0;
+        function incrSize(){
+            if (limit<2){
+            var obj_p = document.getElementsByTagName("p");
+                for (let i=0; i<obj_p.length; i++){
+                        var obj_p = document.getElementsByTagName("p")[i];
+                        var p_crr_size = window.getComputedStyle(obj_p).fontSize;
+                        obj_p.style.fontSize=parseInt(p_crr_size)+2+"px";
+                        var obj_p = document.getElementsByTagName("p");
+    
+            }
+                limit++;   
+            }
+        }
+        function dcrSize(){
+            if (limit > -2){
+            var obj_p = document.getElementsByTagName("p");
+                for (let i=0; i<obj_p.length; i++){
+                        var obj_p = document.getElementsByTagName("p")[i];
+                        var p_crr_size = window.getComputedStyle(obj_p).fontSize;
+                        obj_p.style.fontSize=parseInt(p_crr_size)-2+"px";
+                        var obj_p = document.getElementsByTagName("p");
+            }
+                limit--;
+            }
+        }
+    </script>
+    
+</body>
+</html>
